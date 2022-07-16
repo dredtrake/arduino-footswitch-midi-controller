@@ -16,9 +16,9 @@ Be sure to install MidiUSB & Bounce2 on the arduino.
 
 ```
 const uint8_t controls[] = { 2, 3, 4, 5, 6, 7 }; // the footswitches are plugged from pin 2 to 7
-const uint8_t ledPins[] = { 8, 9, 10, 11, 12, 13 }; // the leds are plugged from pin 8 to 13
+const uint8_t ledPins[] = { 8, 9, 10, 11, 12, 13 }; // the leds are plugged from pin 8 to 13. Commment or remove this line if you don't want to have leds in your project
 const uint8_t notes[] = { 100, 101, 102, 103, 104, 105 }; // for our purpose this value doesn't really matter but it needs a note by button
-int ledStates[] = { HIGH, HIGH, HIGH, HIGH, HIGH, HIGH}; // the state of the leds. Needs one by input. On by default. Use 'LOW' for having them off by default
+int ledStates[] = { HIGH, HIGH, HIGH, HIGH, HIGH, HIGH}; // the state of the leds. Needs one by input. On by default. Use 'LOW' for having them off by default. Commment or remove this line if you don't want to have leds in your project
 ```
 
 <img src="Images/step-1.jpg?raw=truejpg" alt="in progress step" width="980"/>
