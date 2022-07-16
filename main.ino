@@ -3,13 +3,13 @@
 #include <Bounce2.h>
 
 #define MIDI_CHANNEL 1
-#define BOUNCE_TIME 15 // Debounce Time (in milliseconds)
+#define BOUNCE_TIME 10 // Debounce Time (in milliseconds)
 
-// wiring
-const uint8_t controls[] = { 7, 8 };
-const uint8_t ledPins[] = { 10, 11 };
-const uint8_t notes[] = { 108, 109 };
-int ledStates[] = { LOW, LOW };
+//MIDI Channel
+const uint8_t controls[] = { 2, 3, 4, 5, 6, 7 };
+const uint8_t ledPins[] = { 8, 9, 10, 11, 12, 13 };
+const uint8_t notes[] = { 100, 101, 102, 103, 104, 105 };
+int ledStates[] = { HIGH, HIGH, HIGH, HIGH, HIGH, HIGH};
 
 Bounce2::Button buttons[sizeof(controls)];
 
@@ -17,7 +17,7 @@ Bounce2::Button buttons[sizeof(controls)];
 void setup() {
   for (int i = 0; i < sizeof(controls); i++){
     buttons[i].attach(controls[i], INPUT_PULLUP);
-    buttons[i].interval(5);
+    buttons[i].interval(BOUNCE_TIME);
     pinMode(ledPins[i], OUTPUT);
     digitalWrite(ledPins[i], ledStates[i]); 
   }
